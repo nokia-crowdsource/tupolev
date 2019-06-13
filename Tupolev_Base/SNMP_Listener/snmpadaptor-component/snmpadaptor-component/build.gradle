@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+	id 'application'
+	id 'idea'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.au.tupolevbase'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+mainClassName = 'com.au.tupolevbase.component.snmpadaptor.SnmpadaptorApplication'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-core
+	compile group: 'org.apache.camel', name: 'camel-core', version: '2.20.0'
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-kafka
+	compile group: 'org.apache.camel', name: 'camel-kafka', version: '2.20.0'
+
+	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+	compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.1'
+
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-snmp
+	compile group: 'org.apache.camel', name: 'camel-snmp', version: '2.20.0'
+
+	// https://mvnrepository.com/artifact/org.apache.camel/camel-stream
+	compile group: 'org.apache.camel', name: 'camel-stream', version: '2.20.0'
+
+	// https://mvnrepository.com/artifact/org.scala-lang/scala-library
+	compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.0'
+	
+	
+	//SNMP Simulation Jars
+	// https://mvnrepository.com/artifact/org.snmp4j/snmp4j
+	compile group: 'org.snmp4j', name: 'snmp4j', version: '2.5.6'
+
+	// https://mvnrepository.com/artifact/org.snmp4j/snmp4j-agent
+	compile group: 'org.snmp4j', name: 'snmp4j-agent', version: '2.5.3'
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

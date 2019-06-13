@@ -1,0 +1,10 @@
+server:
+  port: 9393
+
+
+adaptor:
+  snmpUri: 'snmp://localhost:162?protocol=udp&type=TRAP&snmpVersion=1'
+  kafka:
+    broker: 'localhost:9092'
+    kafkaPrimaryUri: 'kafka:localhost:9092?topic=alerts_incoming'
+    kafkaDeadLetterTopicUri: 'kafka:localhost:9092?topic=alerts_incoming_exception'
